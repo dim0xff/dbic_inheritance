@@ -31,6 +31,20 @@ CREATE TABLE apartment_rent (
     floor             INT     NOT NULL
 );
 
+CREATE TABLE apartment_rent_daily (
+    id                INTEGER NOT NULL PRIMARY KEY,
+    address           TEXT    NOT NULL,
+
+    min_rent_period   INT     NOT NULL,
+    price_per_month   FLOAT   NOT NULL,
+
+    square            FLOAT   NOT NULL,
+    rooms             INT     NOT NULL,
+    floor             INT     NOT NULL,
+
+    checkout_time     TIME    NOT NULL
+);
+
 CREATE TABLE apartment_sell (
     id                INTEGER NOT NULL PRIMARY KEY,
     address           TEXT    NOT NULL,

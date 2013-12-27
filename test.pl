@@ -119,4 +119,32 @@ $apartment = $apartment->get_from_storage(
 is_deeply( $apartment, $apartment_rent_data,
     'Realty::Apartment::Rent retrieved' );
 
+# Apartment Rent Daily
+my $apartment_rent__daily_data = {
+    id              => 4,
+    address         => '600013, AD, Dres, s 6, app. 255',
+    square          => 50,
+    rooms           => 1,
+    floor           => 15,
+    min_rent_period => 12,
+    price_per_month => 500,
+    checkout_time   => '10:00',
+};
+
+ok(
+    $apartment
+        = $s->resultset('Realty::Apartment::Rent::Daily')
+        ->create($apartment_rent__daily_data),
+    'Realty::Apartment::Rent::Daily Added'
+);
+
+$apartment = $apartment->get_from_storage(
+    {
+        result_class => 'DBIx::Class::ResultClass::HashRefInflator'
+    }
+);
+
+is_deeply( $apartment, $apartment_rent__daily_data,
+    'Realty::Apartment::Rent::Daily retrieved' );
+
 done_testing();
