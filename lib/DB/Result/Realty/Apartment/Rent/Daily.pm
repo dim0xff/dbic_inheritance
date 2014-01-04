@@ -4,7 +4,6 @@ use base qw/DB::Result::Realty::Apartment::Rent/;
 
 __PACKAGE__->table('apartment_rent_daily');
 
-__PACKAGE__->add_columns(qw/ checkout_time /);
-
+__PACKAGE__->load_components('+DB::ResultRole::Realty::Rent::Daily');
 
 1;

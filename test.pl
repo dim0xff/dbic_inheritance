@@ -18,6 +18,7 @@ $s->resultset('Realty::House::Sell')->delete;
 $s->resultset('Realty::House::Rent')->delete;
 $s->resultset('Realty::Apartment::Sell')->delete;
 $s->resultset('Realty::Apartment::Rent')->delete;
+$s->resultset('Realty::Apartment::Rent::Daily')->delete;
 
 
 # House Sell
@@ -127,7 +128,7 @@ my $apartment_rent__daily_data = {
     rooms           => 1,
     floor           => 15,
     min_rent_period => 12,
-    price_per_month => 500,
+    price_per_day    => 500,
     checkout_time   => '10:00',
 };
 

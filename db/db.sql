@@ -36,13 +36,12 @@ CREATE TABLE apartment_rent_daily (
     address           TEXT    NOT NULL,
 
     min_rent_period   INT     NOT NULL,
-    price_per_month   FLOAT   NOT NULL,
+    price_per_day     FLOAT   NOT NULL,
+    checkout_time     TIME    NOT NULL,
 
     square            FLOAT   NOT NULL,
     rooms             INT     NOT NULL,
-    floor             INT     NOT NULL,
-
-    checkout_time     TIME    NOT NULL
+    floor             INT     NOT NULL
 );
 
 CREATE TABLE apartment_sell (
